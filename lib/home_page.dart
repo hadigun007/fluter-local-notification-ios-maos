@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
       requestBadgePermission: false,
       requestSoundPermission: false,
     );
-    var initializationSetting = InitializationSettings(iOS: iosSeetings);
+    var initializationSetting = InitializationSettings(iOS: iosSeetings, macOS: iosSeetings);
     flutterLocalNotificationsPlugin.initialize(initializationSetting);
   }
 
@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
     const DarwinNotificationDetails darwinNotificationDetails =
         DarwinNotificationDetails(subtitle: 'the subtitle');
     const NotificationDetails notificationDetails =
-        NotificationDetails(iOS: darwinNotificationDetails);
+        NotificationDetails(iOS: darwinNotificationDetails, macOS: darwinNotificationDetails);
     await flutterLocalNotificationsPlugin.show(1, 'title of notification with a subtitle',
         'body of notification with a subtitle', notificationDetails,
         payload: 'item x');
